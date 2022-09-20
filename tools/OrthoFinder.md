@@ -3,7 +3,7 @@
 
 [Orthofinder](https://github.com/davidemms/OrthoFinder) is an easy, fast and great tool to identify orthologs. It also provides a species tree, as well as gene trees. 
 
-https://github.com/davidemms/OrthoFinder/blob/master/assets/Workflow.png![image](https://user-images.githubusercontent.com/46928237/191227132-3227f638-abd4-4804-9b91-fbc080c905d9.png)
+![image]https://github.com/davidemms/OrthoFinder/blob/master/assets/Workflow.png(https://user-images.githubusercontent.com/46928237/191227132-3227f638-abd4-4804-9b91-fbc080c905d9.png)
 
 
 ## What are orthologs? paralogs? homologs? 
