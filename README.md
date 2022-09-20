@@ -1,4 +1,6 @@
-            ![image](https://user-images.githubusercontent.com/46928237/191248611-68f2e261-9fae-434e-a327-d8858d2af17d.jpeg)
+
+![image](https://user-images.githubusercontent.com/46928237/191248611-68f2e261-9fae-434e-a327-d8858d2af17d.jpeg)
+![image](https://user-images.githubusercontent.com/46928237/191249452-74e187c4-cc15-4807-af7e-59b0d0e756dd.jpeg)
 
 # Harnessing data from biodiversity genomics projects
 
