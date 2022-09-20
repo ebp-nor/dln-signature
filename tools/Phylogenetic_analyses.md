@@ -12,8 +12,11 @@ The trick is to find a program that can interpret your data. [Figtree](http://tr
 There are many R packages that are really handy for visualizing and analysing trees. Here is a list of tutorials that might prove useful to you. 
 
 [Combining trees with other plots](https://thackl.github.io/ggtree-composite-plots)
+
 [Phylogenetic visualization](https://yulab-smu.top/treedata-book/chapter7.html)
+
 [Phylogenetics in R](https://guangchuangyu.github.io/ggtree-book/chapter-treeio.html), here there is also an explanation of file formats used in phylogenetics
+
 [combining plots in R](https://yulab-smu.top/pkgdocs/aplot.html#axis_align)
 
 
