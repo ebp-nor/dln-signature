@@ -1,5 +1,3 @@
-
-![image](https://user-images.githubusercontent.com/46928237/191248611-68f2e261-9fae-434e-a327-d8858d2af17d.jpeg)
 ![image](https://user-images.githubusercontent.com/46928237/191249452-74e187c4-cc15-4807-af7e-59b0d0e756dd.jpeg)
 
 # Harnessing data from biodiversity genomics projects
@@ -14,7 +12,7 @@ As a starting point, you should use the relevant species from [EnsemblFungi](htt
 
 - The different genomes might have been created at different time points, from different sequencing technologies and different programs. Fungi are often not so complicated to assemble, but there might still be some differences. To quantify and qualify these, you should get basic assembly statistics using [gfastats](https://github.com/vgl-hub/gfastats). More fragmented genomes might lead to poorer annotation because gene models might be split and genes missing altogether. To assess the gene complement (and possibly the quality of the assembly), [BUSCO](https://busco.ezlab.org) should be run on the genomes.
 
-- To get an understanding of differences in gene sets between the species, [OrthoFinder](https://github.com/davidemms/OrthoFinder) is a good tool to run on the annotated proteins. Read more about it here (link to the description of the program from Helle). OrthoFinder can also create a phylogeny of the different species (which can be used for Cactus and other analyses).
+- To get an understanding of differences in gene sets between the species, [OrthoFinder](https://github.com/davidemms/OrthoFinder) is a good tool to run on the annotated proteins. Read more about it here (tools/OrthoFinder.md). OrthoFinder can also create a phylogeny of the different species (which can be used for Cactus and other analyses).
 
 - [Cactus](https://github.com/ComparativeGenomicsToolkit/cactus) can used to generate a multiple whole genome alignment of the species. The alignment can be used to genomic differences (insertions, deletions, inversions, duplications, transpositions) between the different species. For instance, a possible expansion in a gene family (from OrthoFinder results) can then be traced to the genome level. Read more about [Cactus here](tools/cactus.md).
 
