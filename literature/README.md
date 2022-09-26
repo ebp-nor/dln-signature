@@ -11,6 +11,12 @@ Here the authors suggest what challenges within biology can be solved by having 
 
 # Comparative genomics
 
+[This review](https://www.nature.com/articles/nrg.2017.51) gives a broad overview of the topic, focusing on vertebrates (this group includes humans, fish, birds, reptiles etc). 
+
+[Example of whole genome alignment](https://www.nature.com/articles/s41586-020-2876-6) using mammal genomes from the Zoonomia project. 
+
+
+
 # Genome evolution
 
 # Mucoromycota fungi
