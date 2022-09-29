@@ -6,4 +6,4 @@ BUSCO
 
 [Cactus](cactus.md), the multiple whole genome aligner. 
 
-OrthoFinder
+[OrthoFinder](OrthoFinder.md), phylogenetic orthology inference for comparative genomics.
