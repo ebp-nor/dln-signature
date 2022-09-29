@@ -1,6 +1,6 @@
 Here we have gathered a bit more information about different tools that might be useful in the project. 
 
-gfastats
+[gfastats](https://github.com/vgl-hub/gfastats) gives summary statistics of genome assemblies from different formats. For instance number of scaffolds and contigs, N50 scaffold and contig and so on.
 
 BUSCO
 
