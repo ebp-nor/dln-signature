@@ -9,7 +9,7 @@
 ## What are orthologs? paralogs? homologs? 
 Homology is similarity due to shared ancestry between a pair of structures or genes in different taxa. If two genes share ancestry following a speciation event, they are known as orthologs. If two genes trace their ancestry back to a gene duplication event, they are known as paralogs.
 
-https://en.wikipedia.org/wiki/File:Ortholog_paralog_analog_(homologs).svg![image](https://user-images.githubusercontent.com/46928237/193239122-33223055-afc8-4f47-91a1-3d341e18535f.png)
+![image](https://user-images.githubusercontent.com/46928237/193239122-33223055-afc8-4f47-91a1-3d341e18535f.png)
 
 Orthofinder identifies something they call orthogroups. An orthogroup is the set of genes derived from a single gene in the last common ancestor of all the species under consideration.
 
