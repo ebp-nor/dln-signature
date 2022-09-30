@@ -9,3 +9,5 @@ Here we have gathered a bit more information about different tools that might be
 [OrthoFinder](OrthoFinder.md), phylogenetic orthology inference for comparative genomics.
 
 [Phylogenetic analyses](Phylogenetic_analyses.md), some useful tools.
+
+[Databases](Databases.md), a short overview of some databases that might be of use.
