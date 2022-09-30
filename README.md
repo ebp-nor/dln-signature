@@ -9,7 +9,7 @@ The overall aim of this project is to use comparative genomics tools on a set of
 
 To reach the aims of this project, you will have to use different comparative genomic tools, search existing litterature for experimental data and connect this based on the phylogeny between the different species. Here we will suggest some tools that should enable you to reach these goals, but you can also chose to use other approaches than these. 
 
-As a starting point, you should use the relevant species from [EnsemblFungi](https://fungi.ensembl.org/index.html). For instance this link contain it all:
+As a starting point, you should use the relevant species from [EnsemblFungi](https://fungi.ensembl.org/index.html). For instance this link contains it all:
 http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/fungi_mucoromycota1_collection/. You should use an outgroup or two, for instance http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/fungi_entomophthoromycota1_collection/conidiobolus_coronatus_nrrl_28638_gca_001566745/ and including http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/saccharomyces_cerevisiae/ is likely a good idea.
 
 We have set up a project on [Saga](https://documentation.sigma2.no/hpc_machines/saga.html) where you can install programs and run different analyses. You should download the genomes and annotated proteins for the species from EnsemblFungi. Several steps can then be done in parallel:
@@ -20,6 +20,7 @@ We have set up a project on [Saga](https://documentation.sigma2.no/hpc_machines/
 
 - [Cactus](https://github.com/ComparativeGenomicsToolkit/cactus) can used to generate a multiple whole genome alignment of the species. The alignment can be used to genomic differences (insertions, deletions, inversions, duplications, transpositions) between the different species. For instance, a possible expansion in a gene family (from OrthoFinder results) can then be traced to the genome level. Read more about [Cactus here](tools/cactus.md).
 
+- [CAFE5](https://github.com/hahnlab/CAFE5) provides a statistical foundation for evolutionary inferences. It can be interesting to run it on the OrthoFinder results.
+
 In addition to the comparative genomic analyses, you should find (phenotypic) differences between species based on existing litterature. For instance, the Wikipedia page for [Mucoromycota](https://en.wikipedia.org/wiki/Mucoromycota) has links to some relevant litterature, for instance [High-throughput screening of Mucoromycota fungi for production of low- and high-value lipids](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851148/) and [Comparative analysis of different isolated oleaginous mucoromycota fungi for their γ-linolenic acid and carotenoid production](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7665918/).
 
-Noe om hvordan best tolke resultatene i en fylogenetisk setting. For eksempel om  Ornstein–Uhlenbeck eller annet relevant.
