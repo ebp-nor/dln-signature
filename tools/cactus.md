@@ -1,7 +1,7 @@
 
 # Whole Genome Alignment
 
-This is modified from https://github.com/ForBioPhylogenomics/tutorials/blob/main/whole_genome_alignment/README.md. Not all content might have been adapted for this particular project.
+This is modified from https://github.com/ForBioPhylogenomics/tutorials/blob/main/whole_genome_alignment/README.md. Not all content might have been adapted for this particular project, but should give a good overview of the processes.
 
 ## Summary
 
@@ -25,32 +25,19 @@ Originally this used
 
 In this tutorial we will run six genome assemblies of varying quality through this pipeline. This requires masking repeats in the genomes and a guide tree of the species involved. Unfortunately, most of these processes take longer than the time we have available in this session, but all intermediate and final files are available on Saga.
 
-A short presentation of these concepts are [available here](whole_genome_alignment.pdf).
+A short presentation of these concepts is [available here](../presentations/whole_genome_alignment.pdf).
 
 <a name="dataset"></a>
 ## Dataset
 
-The dataset used in this tutorial consists of a subset of species you have used earlier in this course. They are all cichlids, but five of them are quite closely related with Nile tilapia as outgroup.
-
-<center>
-
-| ID      | Species                       | Common name               | Genus            |
-|---------|-------------------------------|---------------------------|------------------|
-| neobri  | *Neolamprologus brichardi*    | lyretail cichlid          | *Neolamprologus* |
-| neomar  | *Neolamprologus marunguensis* | ?                         | *Neolamprologus* |
-| neogra  | *Neolamprologus gracilis*     | ?                         | *Neolamprologus* |
-| neooli  | *Neolamprologus olivaceous*   | ?                         | *Neolamprologus* |
-| neopul  | *Neolamprologus pulcher*      | daffodil cichlid          | *Neolamprologus* |
-| orenil  | *Oreochromis niloticus*       | Nile tilapia              | *Oreochromis*    |
-
-
-</center>
+Here you use the dataset you yourself have defined.
 
 <a name="requirements"></a>
 ## Requirements
 
 We will use [Red](http://toolsmith.ens.utulsa.edu/) (but via the Python script [redmask](https://github.com/nextgenusfs/redmask)), [Mash](https://github.com/marbl/Mash), [rapidNJ](https://github.com/somme89/rapidNJ) and [Cactus](https://github.com/ComparativeGenomicsToolkit/cactus). Red, Mash and rapidNJ should be available as modules on Saga, while Cactus works best as an container (the installation is non-trivial.)
 
+For fungi, Red might not be necessary, so you can skip the next section.
 
 
 <a name="softmask"></a>
@@ -134,6 +121,8 @@ When done, you should see something like this in masked_assemblies:
 
 <a name="mash"></a>
 ## Creating a guide tree with Mash
+
+This section is also not necessary if you already have run OrthoFinder. Thank you can use the phylogeny OrthoFinder creates.
 
 In addition to softmasked genome assemblies, Cactus requires a guide tree. This is because it aligns a handful of genomes at a time (2-5). For instance, it could start with the two most closely related, aligns those, and then use that alignment to reconstruct an ancestral genome to those two. That reconstructed genome is then used to align against the next. This means that Cactus scales linear with the number of genomes and not quadratically as would have been the case if all genomes were compared against all.
 
@@ -283,38 +272,3 @@ One of the main advantages of having a multiple whole genome alignment is that y
 
 You have come to the end and are done with the tutorial. Congratulations!
 
-<a name="chr5"></a>
-## Getting only chr5
-This is for information purposes only, and to get this kinda complete.
-
-To create a reduced dataset we'll only use chromosome 5 from Nile tilapia and the corresponding sequences from the other species. For each species I did this:
-```
-module load StdEnv minimap2/2.17-GCC-8.3.0
-
-mkdir -p paf_alignments
-
-cd paf_alignments
-
-if [ ${1} != 'orenil' ]; then
-	minimap2 -t 10  -cx asm20 ../../data/orenil.fasta ../../data/${1}.fasta > $1_orenil.asm20.paf
-fi
-```
-That is, mapped all against Nile tilapia. Chromosome 5 is called NC_031970.2 in Nile tilapia, so we extract all sequences that map to it at a quality higher than 50 and with an alignment length longer than 5000 bp:
-```
-module load StdEnv seqtk/1.3-foss-2018b
-
-for i in $(ls ../data/*fasta); do
-	j=${i%.fasta}
-	l=${j##*/}
-	echo $l
-	#>NC_031970.2 is LG5/chromosome 5
-	#quality of more than 50 and longer than 5000 bp alignmentx
-	grep NC_031970.2 paf_alignments/${l}_orenil.asm20.paf |awk '$12 > 50' |awk '$10 > 5000'| cut -f 1 | sort -u > paf_alignments/${l}_maps_to_chr5
-	seqtk subseq masked_assemblies/${l}.softmasked.fa paf_alignments/${l}_maps_to_chr5 > masked_assemblies/${l}.softmasked.chr5.fa
-done
-
-samtools faidx  masked_assemblies/orenil.softmasked.fa NC_031970.2 > masked_assemblies/orenil.softmasked.chr5.fa
-```
-In the end the *softmasked.chr5.fa files were created.
-
-If you are reading this and thinking "Didn't you basically do what we did above in a fraction of the time?", then yes, you are correct. There might be some more alignments done inside Cactus, but it is clearly not the quickest whole genome aligner out there. Minimap2 is much faster, but it is only pairwise, and there are presently no way of using Minimap2 instead of LastZ (which is in Cactus) now. However, [Cactus does have a pangenome pipeline implemented](https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/doc/pangenome.md), which actually uses Minimap2 but assumes genomes from one species and they need to do some tricks (splitting up into chromosomes) to get it to work.
