@@ -14,8 +14,6 @@ However, to actually understand these genomes, we need some way of analysing the
 * [Outline](#outline)
 * [Dataset](#dataset)
 * [Requirements](#requirements)
-* [Softmasking with Red](#softmask)
-* [Creating a guide tree with Mash](#mash)
 * [Running Cactus](#cactus)
 
 <a name="outline"></a>
