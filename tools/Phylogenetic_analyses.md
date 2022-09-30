@@ -4,7 +4,7 @@ Once you have your species tree and your gene trees you want to use these to mak
 
 Here is a nice introduction to trait evolution on a [phylogentic tree](https://www.nature.com/scitable/topicpage/trait-evolution-on-a-phylogenetic-tree-relatedness-41936/). 
 
-To make the phylogenetic tree you can use [Orthofinder](../OrthoFinder.md). 
+To make the phylogenetic tree you can use [Orthofinder](OrthoFinder.md). 
 
 ## File formats
 Trees come in many different file formats. Nexus files (file.nex, .nxs etc), newick files (.nwk) or tree files (.tre). There are many more. 
