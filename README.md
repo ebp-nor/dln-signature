@@ -9,7 +9,10 @@ The overall aim of this project is to use comparative genomics tools on a set of
 
 To reach the aims of this project, you will have to use different comparative genomic tools, search existing litterature for experimental data and connect this based on the phylogeny between the different species. Here we will suggest some tools that should enable you to reach these goals, but you can also chose to use other approaches than these. 
 
-As a starting point, you should use the relevant species from [EnsemblFungi](https://fungi.ensembl.org/index.html). (Helle, hvordan sier vi best hvilke arter?). We have set up a project on [Saga](https://documentation.sigma2.no/hpc_machines/saga.html) where you can install programs and run different analyses. You should download the genomes and annotated proteins for the species from EnsemblFungi. Several steps can then be done in parallel:
+As a starting point, you should use the relevant species from [EnsemblFungi](https://fungi.ensembl.org/index.html). For instance this link contain it all:
+http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/fungi_mucoromycota1_collection/. You should use an outgroup or two, for instance http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/fungi_entomophthoromycota1_collection/conidiobolus_coronatus_nrrl_28638_gca_001566745/ and including http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/saccharomyces_cerevisiae/ is likely a good idea.
+
+We have set up a project on [Saga](https://documentation.sigma2.no/hpc_machines/saga.html) where you can install programs and run different analyses. You should download the genomes and annotated proteins for the species from EnsemblFungi. Several steps can then be done in parallel:
 
 - The different genomes might have been created at different time points, from different sequencing technologies and different programs. Fungi are often not so complicated to assemble, but there might still be some differences. To quantify and qualify these, you should get basic assembly statistics using [gfastats](https://github.com/vgl-hub/gfastats). More fragmented genomes might lead to poorer annotation because gene models might be split and genes missing altogether. To assess the gene complement (and possibly the quality of the assembly), [BUSCO](https://busco.ezlab.org) should be run on the genomes.
 
