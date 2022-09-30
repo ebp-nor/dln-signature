@@ -47,21 +47,57 @@ To start, we need to grab the container. You don't have to do this, I put it int
 singularity pull --name cactus-v2.2.0.sif docker://quay.io/comparative-genomics-toolkit/cactus:v2.2.2 
 ```
 
-
-
+Than you can create a script with content something like this:
 
 ```
-sbatch run_cactus_chr5.sh
+#!/bin/bash
+#SBATCH --job-name=cactus
+#SBATCH --account=nn9986k
+#SBATCH --time=96:0:0
+##SBATCH --partition=bigmem
+#SBATCH --mem-per-cpu=10G
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=32
+##SBATCH --cpus-per-task=64
+
+#set -o errexit  # Recommended for easier debugging
+
+## Load your modules
+#module purge   # Recommended for reproducibility
+
+module --force purge
+
+eval "$(conda shell.bash hook)"
+conda activate
+
+#set up input. Change to relevant content
+cat nj_tree |sed "s/'//g" > cactus_setup.chr5.txt
+
+for i in $(ls masked_assemblies/*.chr5.fa); do
+	j=$(basename $i)
+	j=${j%.softmasked.chr5.fa}
+	printf "%s /data/%s\n" $j $i >> cactus_setup.txt
+done
+
+singularity exec -B $(pwd):/data cactus-v2.2.0.sif cactus  --maxCores 32  /data/jobStore /data/cactus_setup.txt /data/fungi.hal --binariesMode local > cactus_1.out 2> cactus_1.err
+
+singularity exec -B $(pwd):/data cactus-v2.2.0.sif halValidate /data/fungi.hal
+singularity exec -B $(pwd):/data cactus-v2.2.0.sif halStats /data/fungi.hal
+
+Save it as run_cactus.sh and submit like this:
+
+```
+sbatch run_cactus.sh
 ```
 
-And everything should work fine. In the end you'll get cichlids_chr5.hal and cichlids_chr5.maf files in your /cluster/projects/nn9458k/phylogenomics/$USERNAME folder, in addition to halValidation.chr5.txt and halStats.chr5.txt, a validation and a statistics file of the HAL file. The whole process took about 5 hours when I tried it.
+And everything should work fine. In the end you'll get fungi.hal in the running directory.
 
-halValidation.chr5.txt should basically just contain:
+halValidation.txt should basically just contain:
 ```
 File valid
 ```
 
-While halStats.chr5.txt should contain this:
+While halStats.chr5.txt should contain something similar to this (but different names):
 ```
 hal v2.1
 ((neomar:0.0045736,neogra:0.004315)Anc1:0.00021445,((neopul:0.0033453,neooli:0.0032482)Anc3:0.00094829,neobri:0.0049009)Anc2:0.00032849,orenil:0.046583)Anc0;
@@ -78,33 +114,7 @@ neooli, 0, 21525845, 1293, 136975, 0
 neobri, 0, 43197405, 18, 315265, 0
 orenil, 0, 39714817, 1, 692510, 0
 ```
-Running the full alignment is quite similar to the one above, but we need some extra information for the sbatch command since we have gotten two bigmem nodes reserved.
-
-```
-sbatch --reservation=nn9458k run_cactus_all.sh
-```
-If that is successful, you'll see cichlids_all.hal, halValidation.all.txt and halStats.all.txt with the content of the stats file this:
-
-```
-hal v2.1
-((neomar:0.0045736,neogra:0.004315)Anc1:0.00021445,((neopul:0.0033453,neooli:0.0032482)Anc3:0.00094829,neobri:0.0049009)Anc2:0.00032849,orenil:0.046583)Anc0;
-
-GenomeName, NumChildren, Length, NumSequences, NumTopSegments, NumBottomSegments
-Anc0, 3, 681329676, 32958, 0, 16672331
-Anc1, 2, 659155609, 75358, 15727138, 6780370
-neomar, 0, 668470958, 89823, 6854395, 0
-neogra, 0, 657998073, 91312, 6746422, 0
-Anc2, 2, 662754018, 18173, 15927409, 5320178
-Anc3, 2, 660323875, 78298, 4933681, 6370077
-neopul, 0, 659878940, 94163, 6380869, 0
-neooli, 0, 666859030, 91778, 6457234, 0
-neobri, 0, 847910432, 9099, 6072207, 0
-orenil, 0, 1005681550, 2460, 22880110, 0
-```
-
-You'll work further with the cichlids_chr5.maf file tomorrow.
 
 One of the main advantages of having a multiple whole genome alignment is that you can pinpoint conserved sequences across the species. In many cases that will be exons, and a HAL file can be use for [comparative annotation](https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit). This is outside the scope of this tutorial.
 
-You have come to the end and are done with the tutorial. Congratulations!
 
