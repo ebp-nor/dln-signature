@@ -10,7 +10,7 @@ The overall aim of this project is to use comparative genomics tools on a set of
 To reach the aims of this project, you will have to use different comparative genomic tools, search existing litterature for experimental data and connect this based on the phylogeny between the different species. Here we will suggest some tools that should enable you to reach these goals, but you can also chose to use other approaches than these. 
 
 As a starting point, you should use the relevant species from [EnsemblFungi](https://fungi.ensembl.org/index.html). For instance this link contains it all:
-http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/fungi_mucoromycota1_collection/. You should use an outgroup or two, for instance http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/fungi_entomophthoromycota1_collection/conidiobolus_coronatus_nrrl_28638_gca_001566745/ and including http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/saccharomyces_cerevisiae/ is likely a good idea.
+http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/fungi_mucoromycota1_collection/. You should use an outgroup or two, for instance http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/fungi_entomophthoromycota1_collection/conidiobolus_coronatus_nrrl_28638_gca_001566745/ and including http://ftp.ensemblgenomes.org/pub/fungi/release-54/fasta/saccharomyces_cerevisiae/ is likely a good idea. You need both the predicted proteins and the genome assemblies. 
 
 We have set up a project on [Saga](https://documentation.sigma2.no/hpc_machines/saga.html) where you can install programs and run different analyses. You should download the genomes and annotated proteins for the species from EnsemblFungi. Several steps can then be done in parallel:
 
