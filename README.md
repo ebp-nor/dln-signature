@@ -26,3 +26,7 @@ As a starting point, [Comparative genomics applied to _Mucor_ species with diffe
 
 In addition to the comparative genomic analyses, you should find (phenotypic) differences between species based on existing litterature. The Wikipedia page for [Mucoromycota](https://en.wikipedia.org/wiki/Mucoromycota) has links to some relevant litterature, for instance [High-throughput screening of Mucoromycota fungi for production of low- and high-value lipids](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851148/) and [Comparative analysis of different isolated oleaginous mucoromycota fungi for their γ-linolenic acid and carotenoid production](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7665918/).
 
+
+The project area is in /cluster/projects/nn9986k on Saga. 
+
+
