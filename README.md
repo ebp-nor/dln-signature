@@ -22,5 +22,7 @@ We have set up a project on [Saga](https://documentation.sigma2.no/hpc_machines/
 
 - [CAFE5](https://github.com/hahnlab/CAFE5) provides a statistical foundation for evolutionary inferences. It can be interesting to run it on the OrthoFinder results.
 
+As a starting point,[Comparative genomics applied to Mucor species with different lifestyles](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-6256-2), uses a couple of the above mentioned tools (OrthoFinder and CAFE) to do comparative genomics in Mucoromycota. It is most likely useful to familiarize yourself with that paper.
+
 In addition to the comparative genomic analyses, you should find (phenotypic) differences between species based on existing litterature. The Wikipedia page for [Mucoromycota](https://en.wikipedia.org/wiki/Mucoromycota) has links to some relevant litterature, for instance [High-throughput screening of Mucoromycota fungi for production of low- and high-value lipids](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851148/) and [Comparative analysis of different isolated oleaginous mucoromycota fungi for their γ-linolenic acid and carotenoid production](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7665918/).
 
