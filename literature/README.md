@@ -7,17 +7,14 @@ This article describes the purposes, goals and challenges of the Earth BioGenome
 Here the authors suggest what challenges within biology can be solved by having high quality, whole genome assemblies for large groups of species such as all the branches of the tree of life or whole ecosystems.
 
 
-# Genome assembly and annotation
-
 # Comparative genomics
 
 [This review](https://www.nature.com/articles/nrg.2017.51) gives a broad overview of the topic, focusing on vertebrates (this group includes humans, fish, birds, reptiles etc). 
 
 [Example of whole genome alignment](https://www.nature.com/articles/s41586-020-2876-6) using mammal genomes from the Zoonomia project. 
 
+ [Comparative genomics applied to _Mucor_ species with different lifestyles](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-6256-2),
 
-
-# Genome evolution
 
 # Mucoromycota fungi
 
