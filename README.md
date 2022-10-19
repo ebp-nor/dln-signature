@@ -29,4 +29,4 @@ In addition to the comparative genomic analyses, you should find (phenotypic) di
 
 The project area is in /cluster/projects/nn9986k on Saga. 
 
-
+Please also look at the subfolders [tools](tools), [literature](literature) and [presentations](presentations). There might be information there which are not directly linked from this page.
