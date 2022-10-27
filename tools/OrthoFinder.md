@@ -20,7 +20,7 @@ Orthofinder identifies something they call orthogroups. An orthogroup is the set
 They show you how to manually downliad data from different databases. To do this step on the command line, look at tips and tricks in the databases section. 
 
 ## Example script
-
+```
 #!/bin/bash
 
 #SBATCH --job-name=orthofinder
@@ -44,4 +44,4 @@ conda activate braker
 orthofinder -a 15 \
 -t 15 \
 -f proteins > orthofinder.out 2> orthofinder.err
-
+```
