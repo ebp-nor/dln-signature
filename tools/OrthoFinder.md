@@ -25,10 +25,10 @@ They show you how to manually downliad data from different databases. To do this
 
 #SBATCH --job-name=orthofinder
 #SBATCH --account=nn9986k
-#SBATCH --time=4:0:0
+#SBATCH --time=4:0:0 ## increase if the job doesn't finish
 #SBATCH --mem-per-cpu=4500M
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=15
+#SBATCH --ntasks-per-node=15 ## increase if the job doesn't finish
 
 
 source /cluster/projects/nn9986k/miniconda3/etc/profile.d/conda.sh
@@ -37,6 +37,7 @@ eval "$(conda shell.bash hook)"
 
 conda activate orthofinder
 
+#increase -a and -t if the job needs more time
 orthofinder -a 15 \
 -t 15 \
 -f proteins > orthofinder.out 2> orthofinder.err
