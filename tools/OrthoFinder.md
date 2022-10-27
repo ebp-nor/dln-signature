@@ -18,3 +18,30 @@ Orthofinder identifies something they call orthogroups. An orthogroup is the set
 [Step-by-Step OrthoFinder Tutorials](https://davidemms.github.io/menu/tutorials.html): This is a series of tutorials that go through how to find data and use it to run OrthoFinder. 
 
 They show you how to manually downliad data from different databases. To do this step on the command line, look at tips and tricks in the databases section. 
+
+## Example script
+
+#!/bin/bash
+
+#SBATCH --job-name=orthofinder
+#SBATCH --account=nn9986k
+#SBATCH --time=4:0:0
+#SBATCH --mem-per-cpu=4500M
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=15
+
+## Load your modules
+#module purge   # Recommended for reproducibility
+
+module --force purge
+
+source /cluster/projects/nn9986k/miniconda3/etc/profile.d/conda.sh
+
+eval "$(conda shell.bash hook)"
+
+conda activate braker
+
+orthofinder -a 15 \
+-t 15 \
+-f proteins > orthofinder.out 2> orthofinder.err
+
