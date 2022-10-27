@@ -30,10 +30,6 @@ They show you how to manually downliad data from different databases. To do this
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=15
 
-## Load your modules
-#module purge   # Recommended for reproducibility
-
-module --force purge
 
 source /cluster/projects/nn9986k/miniconda3/etc/profile.d/conda.sh
 
