@@ -35,7 +35,7 @@ source /cluster/projects/nn9986k/miniconda3/etc/profile.d/conda.sh
 
 eval "$(conda shell.bash hook)"
 
-conda activate braker
+conda activate orthofinder
 
 orthofinder -a 15 \
 -t 15 \
