@@ -81,6 +81,7 @@ singularity exec -B $(pwd):/data cactus-v2.2.0.sif cactus  --maxCores 32  /data/
 
 singularity exec -B $(pwd):/data cactus-v2.2.0.sif halValidate /data/fungi.hal
 singularity exec -B $(pwd):/data cactus-v2.2.0.sif halStats /data/fungi.hal
+```
 
 Save it as run_cactus.sh and submit like this:
 
@@ -91,6 +92,7 @@ sbatch run_cactus.sh
 And everything should work fine. In the end you'll get fungi.hal in the running directory.
 
 halValidation.txt should basically just contain:
+
 ```
 File valid
 ```
